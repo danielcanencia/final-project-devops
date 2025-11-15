@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reto-flask"
+version = "0.1.0"
+description = "Aplicación Flask con PostgreSQL y entorno reproducible en Docker"
+authors = [
+    { name = "Daniel", email = "daniel@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "Flask>=2.3",
+    "SQLAlchemy>=2.0",
+    "Flask-SQLAlchemy>=3.1.1",
+    "psycopg2-binary>=2.9",
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "coverage>=7.3",
+    "flake8>=6.1",
+]
+
+[project.scripts]
+run-app = "src.run:main"
+init-db = "src.manage:main"
+
+[tool.setuptools]
+packages = ["app"]
+package-dir = { "" = "src" }
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "--cov=src/app --cov-report=term-missing --cov-fail-under=80"
+testpaths = ["src/tests"]
+pythonpath = ["src"]
+
+[tool.coverage.run]
+branch = true
+source = ["src/app"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 80
+
+[tool.flake8]
+max-line-length = 88
+exclude = ["__pycache__", "migrations"]
