@@ -2,13 +2,25 @@
 
 Este entorno permite ejecutar una aplicación web, desarrollada utilizando el framework de Python Flask, de forma reproducible haciendo uso de Docker.
 
+## Requisitos previos
+- Python 3
+- Docker (CLI) + Docker Compose
+
 ## Arquitectura del software
 
 - Python + Flask framework
 - PostgreSQL como base de datos
 - Docker + Docker Compose para orquestación
 - Tests con Pytest y cobertura con Coverage
+- Paquetizado y manejo de dependencias utilizando pyproject.toml (setuptools based)
 - Versionado utilizando Git como VCS
+
+## Instalación de Requisitos
+```bash
+python -m venv venv         # Creación de entorno virtual
+source venv\bin\activate    # Activación de entorno virtual
+python -m pip install -e .  # Instalación de dependencias (utilizando pyproject.toml)
+```
 
 ## Ejecucción en Docker
 * Este es el método recomendado para poner en marcha la aplicación, porque gracias a Docker es reproducible en entornos diferentes
