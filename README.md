@@ -1,4 +1,4 @@
-# Proyecto Final DevOps: Entorno local de desarrollo
+# Proyecto Final DevOps: Creación de entorno local de desarrollo
 
 Este entorno permite ejecutar una aplicación web, desarrollada utilizando el framework de Python Flask, de forma reproducible haciendo uso de Docker.
 
@@ -42,7 +42,7 @@ docker compose exec web coverage report -m
 
 ## Ejecucción en Docker utilizando el Makefile
 
-* Para simplificar la tareas de desarrollo, es posible utilizar el comando `make` para ejecutar los comandos dockerr compose anteriormente mencionados.
+* Para simplificar la tareas de desarrollo, es posible utilizar el comando `make` para ejecutar los comandos docker compose anteriormente mencionados.
 
 ```bash
 make build; make run # o con un único comando: make up

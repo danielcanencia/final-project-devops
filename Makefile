@@ -14,7 +14,7 @@ run:
 	docker compose up --remove-orphans -d
 	make init-db-docker
 
-# Reconstruye la imagen desde cero y ejecuta init-db
+# Reconstruye la imagen desde cero
 build:
 	docker compose build --no-cache
 
